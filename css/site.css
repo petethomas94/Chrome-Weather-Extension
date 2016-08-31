@@ -1,3 +1,12 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:'Baloo Bhaina', cursive;
+}
+
 .extension_content{
 	width: 620px;
 	height: 200px;
@@ -11,6 +20,7 @@
 	float: left;
 	display:inline-block;
 	margin: 10px;
+	position: relative;
 }
 
 .extra_info{
@@ -32,3 +42,87 @@
 	display: inline-block;
 	background-color: #ffff99;
 }
+
+.chevron_icon{
+	color: #808080;
+	background-color: #f2f2f2;
+	-webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+.chevron_icon:hover{
+	background-color: #cccccc;
+	cursor: pointer;
+}
+
+.chevron_icon_left{
+	bottom: 0px;
+	position: absolute;
+}
+
+.chevron_icon_right{
+	bottom: 0px;
+	right: 0px;
+	position: absolute;
+}
+
+.main_forecast_box{
+	position: relative;
+	overflow: hidden;
+}
+
+.main_forecast_content{
+	margin: 0;
+	padding: 0;
+}
+
+.main_forecast_content li{
+	width:100%;
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.active{
+	height: 150px;
+}
+.active li{
+	position: absolute;
+	top: 200px;
+}
+
+.active li.current{
+	top: 0px;
+	height: 145px; 
+}
+
+
+.forecast_date{
+	position: relative;
+	top:0px;
+}
+
+.forecast_date h1{
+	margin-top: 0px;
+	margin-bottom: 3px;
+	padding-left: 13px;
+	padding-top:5px;
+	color: #808080;
+	background-color: #f2f2f2;
+	font-size: 2em;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
