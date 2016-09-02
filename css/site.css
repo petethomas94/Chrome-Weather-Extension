@@ -4,13 +4,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family:'Baloo Bhaina', cursive;
+  font-family:'PT Sans', sans-serif;
 }
 
 .extension_content{
 	width: 620px;
 	height: 200px;
 	background-color: #ffff33;
+}
+
+.visible_section{
+	display: inline-block !important;
 }
 
 .main_info{
@@ -24,7 +28,75 @@ h6 {
 }
 
 .extra_info{
-	width: 300px;
+	width: 340px;
+	height: 180px;
+	margin: 10px;
+	margin-left: 0px;
+	float: left;
+	display: none;
+	background-color: #ffff99;
+}
+
+.settings_section{
+	width: 340px;
+	height: 180px;
+	margin: 10px;
+	margin-left: 0px;
+	float: left;
+	display: none;
+	background-color: #ffff99;
+}
+
+.heading_bar_return{
+	height:51px;
+	width:51px;
+	background-color: #808080;
+	margin:0px;
+	float: right;
+	display: inline-block;
+}
+
+.heading_bar_return:hover{
+	background-color: #999999;
+	cursor: pointer;
+	-webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.heading_bar_return i{
+	color: #f2f2f2;
+	margin: 7.5px;
+}
+
+.heading_bar{
+	width: 100%;
+	height: 51px;
+	background-color: #f2f2f2;
+}
+
+.heading_bar h1{
+	color: #808080;
+	font-size: 25px;
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 13px;
+	display: inline-block;
+}
+
+.location_section{
+	width: 340px;
+	height: 180px;
+	margin: 10px;
+	margin-left: 0px;
+	float: left;
+	display: none;
+	background-color: #ffff99;
+}
+
+.options{
+	width: 60px;
 	height: 180px;
 	margin: 10px;
 	margin-left: 0px;
@@ -33,14 +105,23 @@ h6 {
 	background-color: #ffff99;
 }
 
-.options{
-	width: 100px;
-	height: 180px;
-	margin: 10px;
-	margin-left: 0px;
-	float: left;
-	display: inline-block;
-	background-color: #ffff99;
+.options_item{
+	width: 60px;
+	height: 60px;
+	background-color: #f2f2f2;
+	-webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.options_item:hover{
+	background-color: #cccccc;
+	cursor: pointer;
+}
+
+.options_item i{
+	color: #808080;
+	margin: 12px;
 }
 
 .chevron_icon{
@@ -104,12 +185,90 @@ h6 {
 
 .forecast_date h1{
 	margin-top: 0px;
-	margin-bottom: 3px;
+	margin-bottom: 0px;
 	padding-left: 13px;
-	padding-top:5px;
+	padding-top:10px;
+	padding-bottom: 10px;
 	color: #808080;
 	background-color: #f2f2f2;
 	font-size: 2em;
+}
+
+.max_temp_main{
+	margin-top: 6px;
+	margin-left: 5px;
+	display:inline-block;
+	float: left;
+}
+
+.max_temp_main h1{
+	margin: 0px;
+	color: #a6a6a6;
+	padding-left: 7px;
+	padding-top: 5px;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+.weather_icon_main{
+	position: relative;
+	background-color: #f2f2f2;
+	float: right;
+	display: inline-block;
+	margin-left: 0px;
+	width: 70px;
+	height: 70px;
+}
+
+.weather_icon_main i{
+	font-size: 40px;
+	margin-left:5px;
+	margin-top: 15px;
+	color: #808080;
+}
+
+.extra_info ul{
+	height: 100%;
+	list-style-type: none;
+	padding: 0px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    margin: 0px;
+}
+
+.extra_info ul li{
+	width: 100%;
+	background-color: #f2f2f2;
+	height: 50px;
+	margin-bottom: 5px;
+}
+
+.timeframe_element{
+	display: inline-block;
+	height: 100%;
+}
+
+
+.timeframe_element h1{
+	margin:0px;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+	color: #808080;
+	position: relative;
+}
+
+.timeframe_element h1:after{
+	content:; ''
+}
+
+.timeframe_time h1{
+	padding-left: 15px;
+}
+
+.timeframe_temp h1{
+
 }
 
 /* Rules for sizing the icon. */
@@ -126,3 +285,16 @@ h6 {
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
+::-webkit-scrollbar{
+    background-color: #ffff99;
+}
+
+::-webkit-scrollbar-thumb{
+    height: 10px;
+    background-color: #cccccc;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #a6a6a6;
+	cursor: pointer;
+};

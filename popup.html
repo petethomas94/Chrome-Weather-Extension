@@ -4,12 +4,17 @@
 	<title>Popup</title>
 </head>
 <body ng-app="Extension">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	
 	<div class="extension_content">
 		<div class="main_info" ng-controller="MainController">
@@ -23,25 +28,70 @@
 								{{daily.date}}
 							</h1>
 						</div>
+						<div class="max_temp_main">
+							<h1>{{daily.max_temp_main}} &deg;C</h1>
+						</div>
 					</li>
 				</ol>
 
 			</div>
 
-			<i class="material-icons md-36 chevron_icon chevron_icon_left">chevron_left</i>
-			<i class="material-icons md-36 chevron_icon chevron_icon_right">chevron_right</i>		
+			<i class="material-icons md-36 chevron_icon chevron_icon_left" ng-click="prevForecast()">chevron_left</i>
+			<i class="material-icons md-36 chevron_icon chevron_icon_right" ng-click="nextForecast()">chevron_right</i>		
 
 		</div>
-		<div class="extra_info">
-			
+		<div class="extra_info visible_section" ng-controller="DailyController">
+			<ul>
+				<li ng-repeat="timeframe in daily.timeframes">
+					<div class="timeframe_time timeframe_element">
+						<h1>{{timeframe.time}}</h1>
+					</div>
+					<div class="timeframe_temp timeframe_element">
+						<h1>{{timeframe.temp}} &deg;C</h1>
+					</div>
+				</li>
+			</ul>
 		</div>
+
+		<div class="settings_section">
+			<div class="heading_bar">
+				<h1>Settings</h1>
+				<div class="heading_bar_return">
+					<i class="material-icons md-36">arrow_back</i>
+				</div>
+			</div>
+		</div>
+
+		<div class="location_section">
+			<div class="heading_bar">
+				<h1>Change location</h1>
+				<div class="heading_bar_return">
+					<i class="material-icons md-36">arrow_back</i>
+				</div>
+			</div>
+		</div>
+
+
 		<div class="options">
-			
+			<div class="options_item change_location_button">
+				<i class="material-icons md-36">search</i>
+			</div>
+			<div class="options_item settings_button">
+				<i class="material-icons md-36">settings</i>
+			</div>
+			<div class="options_item">
+				<i class="material-icons md-36">refresh</i>
+			</div>
 		</div>
 
 	</div>
 
+	<script type="text/javascript" src="js/buttons.js"></script>
 	<script type="text/javascript" src="js/extension.js"></script>
+	<script type="text/javascript" src="js/Services/DailyService.js"></script>
+	<script type="text/javascript" src="js/Controllers/MainController.js"></script>
+	<script type="text/javascript" src="js/Controllers/DailyController.js"></script>
 	<script type="text/javascript" src="js/carousel-controls.js"></script>
+
 </body>
 </html>
