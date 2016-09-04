@@ -17,40 +17,43 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	
 	<div class="extension_content">
-		<div class="main_info" ng-controller="MainController">
-			
-			<div class="main_forecast_box active">
+		<div ng-controller="MainController">
+			<div class="main_info">
 				
-				<ol class="main_forecast_content">
-					<li ng-repeat="daily in forecast" ng-class="{current:$first}">
-						<div class="forecast_date">
-							<h1>
-								{{daily.date}}
-							</h1>
-						</div>
-						<div class="max_temp_main">
-							<h1>{{daily.max_temp_main}} &deg;C</h1>
-						</div>
-					</li>
-				</ol>
+				<div class="main_forecast_box active">
+					
+					<ol class="main_forecast_content">
+						<li ng-repeat="daily in forecast.DailyForecast" ng-class="{current:$first}">
+							<div class="forecast_date">
+								<h1>
+									{{daily.date}}
+								</h1>
+							</div>
+							<div class="max_temp_main">
+								<h1>{{daily.max_temp_main}} &deg;C</h1>
+							</div>
+						</li>
+					</ol>
+
+				</div>
+
+				<i class="material-icons md-36 chevron_icon chevron_icon_left" ng-click="prevForecast()">chevron_left</i>
+				<i class="material-icons md-36 chevron_icon chevron_icon_right" ng-click="nextForecast()">chevron_right</i>		
 
 			</div>
+			<div class="extra_info visible_section">
+				<ul>
+					<li ng-repeat="timeframe in forecast.currentDailyForecast.timeframes">
+						<div class="timeframe_time timeframe_element">
+							<h1>{{timeframe.time}}</h1>
+						</div>
+						<div class="timeframe_temp timeframe_element">
+							<h1>{{timeframe.temp}} &deg;C</h1>
+						</div>
+					</li>
+				</ul>
+			</div>
 
-			<i class="material-icons md-36 chevron_icon chevron_icon_left" ng-click="prevForecast()">chevron_left</i>
-			<i class="material-icons md-36 chevron_icon chevron_icon_right" ng-click="nextForecast()">chevron_right</i>		
-
-		</div>
-		<div class="extra_info visible_section" ng-controller="DailyController">
-			<ul>
-				<li ng-repeat="timeframe in daily.timeframes">
-					<div class="timeframe_time timeframe_element">
-						<h1>{{timeframe.time}}</h1>
-					</div>
-					<div class="timeframe_temp timeframe_element">
-						<h1>{{timeframe.temp}} &deg;C</h1>
-					</div>
-				</li>
-			</ul>
 		</div>
 
 		<div class="settings_section">
@@ -79,8 +82,10 @@
 			<div class="options_item settings_button">
 				<i class="material-icons md-36">settings</i>
 			</div>
-			<div class="options_item">
-				<i class="material-icons md-36">refresh</i>
+			<div ng-controller="RefreshController">
+				<div class="options_item" ng-click="refresh()">
+					<i class="material-icons md-36 refreshIcon">refresh</i>
+				</div>
 			</div>
 		</div>
 
@@ -88,9 +93,10 @@
 
 	<script type="text/javascript" src="js/buttons.js"></script>
 	<script type="text/javascript" src="js/extension.js"></script>
-	<script type="text/javascript" src="js/Services/DailyService.js"></script>
+	<script type="text/javascript" src="js/Services/ForecastService.js"></script>
 	<script type="text/javascript" src="js/Controllers/MainController.js"></script>
 	<script type="text/javascript" src="js/Controllers/DailyController.js"></script>
+	<script type="text/javascript" src="js/Controllers/RefreshController.js"></script>
 	<script type="text/javascript" src="js/carousel-controls.js"></script>
 
 </body>

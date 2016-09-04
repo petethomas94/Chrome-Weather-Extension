@@ -1,10 +1,8 @@
-var Extension = angular.module('Extension', []);
-
 (function(){
 
 	Extension.service('DailyService', function($rootScope){
 
-		var daily = "";
+		var daily = {};
 
 		var getDaily = function(){
 			return daily;
