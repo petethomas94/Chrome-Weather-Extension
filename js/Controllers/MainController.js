@@ -19,7 +19,7 @@
 
       $scope.nextForecast = function(){
       	if(currentDaily < $scope.forecast.DailyForecast.length - 1){
-                  $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily + 1];
+            $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily + 1];
       		currentDaily++;
       	}
       }

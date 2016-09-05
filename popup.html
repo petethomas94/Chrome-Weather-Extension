@@ -19,7 +19,11 @@
 	<div class="extension_content">
 		<div ng-controller="MainController">
 			<div class="main_info">
-				
+
+				<div style="height: 51px; width: 100%; position: absolute;">
+					<div class="date_bar"></div>
+				</div>
+
 				<div class="main_forecast_box active">
 					
 					<ol class="main_forecast_content">
@@ -83,7 +87,7 @@
 				<i class="material-icons md-36">settings</i>
 			</div>
 			<div ng-controller="RefreshController">
-				<div class="options_item" ng-click="refresh()">
+				<div class="options_item refresh_button" ng-click="refresh()">
 					<i class="material-icons md-36 refreshIcon">refresh</i>
 				</div>
 			</div>
@@ -95,7 +99,6 @@
 	<script type="text/javascript" src="js/extension.js"></script>
 	<script type="text/javascript" src="js/Services/ForecastService.js"></script>
 	<script type="text/javascript" src="js/Controllers/MainController.js"></script>
-	<script type="text/javascript" src="js/Controllers/DailyController.js"></script>
 	<script type="text/javascript" src="js/Controllers/RefreshController.js"></script>
 	<script type="text/javascript" src="js/carousel-controls.js"></script>
 

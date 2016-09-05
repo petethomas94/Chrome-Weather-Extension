@@ -18,4 +18,19 @@
 		$('.extra_info').addClass('visible_section');
 	})
 
+	$('.refresh_button').on('click', function(){
+		toggleRefreshEffect();
+	})
+
+	var toggleRefreshEffect = function(){
+
+		$elements = $('.extra_info ul, .date_bar');
+
+		$elements.addClass('refresh_effect');
+		setTimeout(function(){
+			$elements.removeClass('refresh_effect');
+		}, 1600);
+
+	}
+
 })();

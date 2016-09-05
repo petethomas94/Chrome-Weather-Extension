@@ -34,7 +34,8 @@ h6 {
 	margin-left: 0px;
 	float: left;
 	display: none;
-	background-color: #ffff99;
+	background-color: #f2f2f2;
+	position: relative;
 }
 
 .settings_section{
@@ -150,6 +151,7 @@ h6 {
 .main_forecast_box{
 	position: relative;
 	overflow: hidden;
+	top: 0;
 }
 
 .main_forecast_content{
@@ -183,6 +185,14 @@ h6 {
 	top:0px;
 }
 
+.date_bar{
+	top: 0px;
+	width: 100%;
+	height: 51px;
+	position: absolute;
+	background: #f2f2f2
+}
+
 .forecast_date h1{
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -190,7 +200,7 @@ h6 {
 	padding-top:10px;
 	padding-bottom: 10px;
 	color: #808080;
-	background-color: #f2f2f2;
+	/*background-color: #f2f2f2;*/
 	font-size: 2em;
 }
 
@@ -238,9 +248,36 @@ h6 {
 
 .extra_info ul li{
 	width: 100%;
-	background-color: #f2f2f2;
+	background-color: rgba(255, 255, 255, 0);/*#f2f2f2*/
 	height: 50px;
-	margin-bottom: 5px;
+	/*margin-bottom: 5px;*/
+	border-bottom: 5px solid #ffff99;
+	position: relative;
+}
+
+.refresh_effect{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-position: -1000px;
+	background-repeat: no-repeat;
+
+	background-image: -webkit-linear-gradient(left, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Safari 5.1 to 6.0 */
+    background-image: -o-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Opera 11.1 to 12.0 */
+    background-image: -moz-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* Standard syntax */
+
+    -webkit-animation: refresh_animation 1.5s ease-in-out infinite;
+
+}
+
+@-webkit-keyframes refresh_animation{
+	from{background-position: -340px 0}
+	to{background-position: 340px 0}
 }
 
 .timeframe_element{
@@ -296,20 +333,4 @@ h6 {
 ::-webkit-scrollbar-thumb:hover{
 	background-color: #a6a6a6;
 	cursor: pointer;
-}
-
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to { 
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-.loading{
-	-webkit-animation-name:             rotate; 
-    -webkit-animation-duration:         0.5s; 
-    -webkit-animation-iteration-count:  infinite;
-    -webkit-transition-timing-function: linear;
 }
