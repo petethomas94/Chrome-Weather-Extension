@@ -1,5 +1,9 @@
 (function(){
 
+	$('.location_section').addClass('visible_section').removeClass('visible_section');
+
+	$('.extra_info').addClass('visible_section');
+
 	$('.settings_button').on('click', function(){
 		var $visible_section = $('.visible_section');
 		$visible_section.removeClass('visible_section');
