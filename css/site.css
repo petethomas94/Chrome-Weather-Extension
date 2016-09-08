@@ -200,7 +200,7 @@ h6 {
 	padding-top:10px;
 	padding-bottom: 10px;
 	color: #808080;
-	/*background-color: #f2f2f2;*/
+	background-color: #f2f2f2;
 	font-size: 2em;
 }
 
@@ -244,6 +244,14 @@ h6 {
     overflow-y: scroll;
     white-space: nowrap;
     margin: 0px;
+    background-position: -1000px;
+
+    background-repeat: no-repeat;
+
+	background-image: -webkit-linear-gradient(left, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Safari 5.1 to 6.0 */
+    background-image: -o-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Opera 11.1 to 12.0 */
+    background-image: -moz-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* Standard syntax */
 }
 
 .extra_info ul li{
@@ -253,25 +261,20 @@ h6 {
 	/*margin-bottom: 5px;*/
 	border-bottom: 5px solid #ffff99;
 	position: relative;
+
 }
 
 .refresh_effect{
-	content: '';
-	position: absolute;
-	top: 0;
+/*	content: '';*/
+	/*position: absolute;*/
+/*	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100%;*/
 
-	background-position: -1000px;
-	background-repeat: no-repeat;
-
-	background-image: -webkit-linear-gradient(left, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Safari 5.1 to 6.0 */
-    background-image: -o-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Opera 11.1 to 12.0 */
-    background-image: -moz-linear-gradient(right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* For Firefox 3.6 to 15 */
-    background-image: linear-gradient(to right, rgba(242, 242, 242, 0.7) , rgba(204, 204, 204, 0.7), rgba(242, 242, 242, 0.7)); /* Standard syntax */
-
-    -webkit-animation: refresh_animation 1.5s ease-in-out infinite;
+	/*/*background-position: -1000px;*/
+	
+    -webkit-animation: refresh_animation 1.5s ease;
 
 }
 
@@ -303,8 +306,10 @@ h6 {
 	padding-left: 15px;
 }
 
-.timeframe_temp h1{
-
+#map_canvas{
+	width: 100%;
+	height: 129px;
+	position: relative;
 }
 
 /* Rules for sizing the icon. */

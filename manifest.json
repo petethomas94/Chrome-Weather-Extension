@@ -9,5 +9,6 @@
      "default_popup": "popup.html"
   },
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://maps.googleapis.com https://maps.gstatic.com; object-src 'self'"
 }

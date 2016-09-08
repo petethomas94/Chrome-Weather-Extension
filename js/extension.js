@@ -1,1 +1,8 @@
-var Extension = angular.module('Extension', []);
+var Extension = angular.module('Extension', ['uiGmapgoogle-maps'])
+.config(function(uiGmapGoogleMapApiProvider){
+	uiGmapGoogleMapApiProvider.configure({
+		key: 'AIzaSyDxXaP7UCo_Io_3xqlPsAIFYA0_hokhCBI',
+		v: '3.20',
+		libraries: 'weather,geometry,visualization'
+	});
+})

@@ -9,20 +9,19 @@
 	<script src="bower_components/ngGeolocation/ngGeolocation.min.js"></script>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+	<script src="/bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+	<script src="/bower_components/lodash/dist/lodash.js"></script>
+	<script src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/weather-icons.css">
-	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxXaP7UCo_Io_3xqlPsAIFYA0_hokhCBI&callback=angular.noop" async defer></script> -->
 	
 	<div class="extension_content">
 		<div ng-controller="MainController">
 			<div class="main_info">
-
-				<div style="height: 51px; width: 100%; position: absolute;">
-					<div class="date_bar"></div>
-				</div>
 
 				<div class="main_forecast_box active">
 					
@@ -76,6 +75,9 @@
 					<i class="material-icons md-36">arrow_back</i>
 				</div>
 			</div>
+			<div id="map_canvas" ng-controller="LocationController">
+    			<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+			</div>
 		</div>
 
 
@@ -100,6 +102,7 @@
 	<script type="text/javascript" src="js/Services/ForecastService.js"></script>
 	<script type="text/javascript" src="js/Controllers/MainController.js"></script>
 	<script type="text/javascript" src="js/Controllers/RefreshController.js"></script>
+	<script type="text/javascript" src="js/Controllers/LocationController.js"></script>
 	<script type="text/javascript" src="js/carousel-controls.js"></script>
 
 </body>

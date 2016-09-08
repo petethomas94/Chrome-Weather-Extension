@@ -24,12 +24,11 @@
 
 	var toggleRefreshEffect = function(){
 
-		$elements = $('.extra_info ul, .date_bar');
+		$element = $('.extra_info ul');
 
-		$elements.addClass('refresh_effect');
-		setTimeout(function(){
-			$elements.removeClass('refresh_effect');
-		}, 1600);
+		$element.removeClass('refresh_effect');
+
+		$element.addClass('refresh_effect');
 
 	}
 
