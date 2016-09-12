@@ -94,6 +94,18 @@ h6 {
 	float: left;
 	display: none;
 	background-color: #ffff99;
+	position: relative;
+}
+
+.location_section .heading_bar_return{
+	position: absolute;
+	right: 0px;
+	z-index: 99;
+	background-color: rgba(128, 128, 128, 0.7)
+}
+
+.location_section .heading_bar_return:hover{
+	background-color: rgba(153, 153, 153, 0.7)
 }
 
 .options{
@@ -220,6 +232,22 @@ h6 {
 	line-height: 40px;
 }
 
+.formatted_address{
+	margin-top: 6px;
+	margin-left: 5px;
+	display:inline-block;
+	float: left;
+}
+
+.formatted_address h1{
+	margin: 0px;
+	color: #a6a6a6;
+	padding-left: 7px;
+	padding-top: 5px;
+	font-size: 20px;
+	line-height: 20px;
+}
+
 .weather_icon_main{
 	position: relative;
 	background-color: #f2f2f2;
@@ -265,17 +293,7 @@ h6 {
 }
 
 .refresh_effect{
-/*	content: '';*/
-	/*position: absolute;*/
-/*	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;*/
-
-	/*/*background-position: -1000px;*/
-	
     -webkit-animation: refresh_animation 1.5s ease;
-
 }
 
 @-webkit-keyframes refresh_animation{
@@ -308,7 +326,7 @@ h6 {
 
 #map_canvas{
 	width: 100%;
-	height: 129px;
+	height: 100%;
 	position: relative;
 	margin:0px;
 }
@@ -319,6 +337,19 @@ h6 {
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+#map_textbox{
+	color: rgba(242, 242, 242, 1);
+	background-color: rgba(128, 128, 128, 0.7);
+	font-family:'PT Sans', sans-serif;
+	border-style: none;
+	font-size: 18px;
+	padding-left: 8px;
+}
+
+#map_textbox::-webkit-input-placeholder{
+	color: rgba(242, 242, 242, 1);
 }
 
 /* Rules for sizing the icon. */

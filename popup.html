@@ -35,6 +35,9 @@
 							<div class="max_temp_main">
 								<h1>{{daily.max_temp_main}} &deg;C</h1>
 							</div>
+							<div class="formatted_address">
+								<h1>{{location.formatted_address}}</h1>
+							</div>
 						</li>
 					</ol>
 
@@ -68,16 +71,23 @@
 			</div>
 		</div>
 
-		<div class="location_section">
-			<div class="heading_bar">
-				<h1>Change location</h1>
-				<div class="heading_bar_return">
-					<i class="material-icons md-36">arrow_back</i>
-				</div>
+		<div class="location_section visible_section">
+
+			<div class="heading_bar_return">
+				<i class="material-icons md-36">arrow_back</i>
 			</div>
+
 			<div id="map_canvas" ng-controller="LocationController">
-    			<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+
+			    <script id="searchbox.tpl.html" type="text/ng-template">
+			      <input id= "map_textbox" type="text" placeholder="Change location" onfocus="if(this.value != '') { this.value = ''; }">
+			    </script>
+
+			    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+			        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+			    </ui-gmap-google-map>
 			</div>
+
 		</div>
 
 
@@ -100,6 +110,7 @@
 	<script type="text/javascript" src="js/buttons.js"></script>
 	<script type="text/javascript" src="js/extension.js"></script>
 	<script type="text/javascript" src="js/Services/ForecastService.js"></script>
+	<script type="text/javascript" src="js/Services/LocationService.js"></script>
 	<script type="text/javascript" src="js/Controllers/MainController.js"></script>
 	<script type="text/javascript" src="js/Controllers/RefreshController.js"></script>
 	<script type="text/javascript" src="js/Controllers/LocationController.js"></script>

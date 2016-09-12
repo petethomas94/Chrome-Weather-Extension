@@ -1,46 +1,52 @@
 (function(){
 
-	  var appId = "dcbe324b",
-        appKey = "7822caa830c01489a67c1ca71d434eee",
-        baseUrl = "https://api.weatherunlocked.com/api/forecast/",
-        defaultLat = "50.820688",
-        defaultLong = "-1.575503"
+    var MainController = function($scope, $rootScope, $http, ForecastService, LocationService){
 
-    var MainController = function($scope, $http, ForecastService, $rootScope){
+      $scope.location = LocationService.getLocation();
 
     	var currentDaily = 0;
 
       $('.refreshIcon').addClass('loading');
 
-    	ForecastService.getForecast().then(function(d){
-        $scope.forecast = d;
-        $('.refreshIcon').removeClass('loading');
-      });
+      ForecastService.requestForecast($scope.location.lat, $scope.location.long).then(function(d){
+          $scope.forecast = ForecastService.getForecast();
+      })
 
       $scope.nextForecast = function(){
       	if(currentDaily < $scope.forecast.DailyForecast.length - 1){
-            $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily + 1];
+          $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily + 1];
       		currentDaily++;
       	}
       }
 
       $scope.prevForecast = function(){
       	if(currentDaily > 0){
-                  $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily - 1];
+          $scope.forecast.currentDailyForecast = $scope.forecast.DailyForecast[currentDaily - 1];
       		currentDaily--;
       	}
       }
 
       $rootScope.$on('REFRESH_FORECAST', function(response){
-            $('.refreshIcon').addClass('loading');
-            ForecastService.getForecast().then(function(d){
-                  $('.refreshIcon').removeClass('loading');
-                  $scope.forecast = d;
-            })
+        var forecast = ForecastService.getForecast();
+        ForecastService.requestForecast(forecast.location.lat, forecast.location.long).then(function(d){
+          $scope.forecast = ForecastService.getForecast();
+        })
+      })
+
+      $rootScope.$on('UPDATED_FORECAST', function(response){
+        $scope.forecast = ForecastService.getForecast();
+      })
+
+      $rootScope.$on('LOCATION_CHANGED', function(response){
+        var location = LocationService.getLocation();
+        $scope.location = location;
+        ForecastService.requestForecast(location.lat, location.long).then(function(d){
+          $scope.forecast = ForecastService.getForecast();
+        })
       })
 
     }
 
-    Extension.controller('MainController', ["$scope", "$http", "ForecastService", "$rootScope", MainController]);
+    Extension.controller('MainController', ["$scope", "$rootScope", "$http", "ForecastService", "LocationService", MainController]);
 
 })()

@@ -4,30 +4,44 @@
 
 		var appId = "dcbe324b",
         appKey = "7822caa830c01489a67c1ca71d434eee",
-        baseUrl = "https://api.weatherunlocked.com/api/forecast/",
-        defaultLat = "50.820688",
-        defaultLong = "-1.575503"
+        baseUrl = "https://api.weatherunlocked.com/api/forecast/";
 
-    var defaultUrl = baseUrl + defaultLat + "," + defaultLong + "?app_id=" + appId + "&app_key=" + appKey;
+    var forecast = {};
 
     //http://stackoverflow.com/questions/12505760/processing-http-response-in-service
-		var getForecast = function(){
-			var promise = $http.get(defaultUrl, { headers: { 'Accept': 'application/json' } }).then(function(response){
-				return setForecast(response.data);
+		var requestForecast = function(lat, long){
+      var url = baseUrl + lat + "," + long + "?app_id=" + appId + "&app_key=" + appKey;
+			var promise = $http.get(url, { headers: { 'Accept': 'application/json' } }).then(function(response){
+				setForecast(response.data, lat, long);
+        //return getForecast();
 			})
 			return promise;
 		}
 
-		var setForecast = function (data) {
+		var setForecast = function (data, lat, long) {
 			var dailyForecast = []
       for (var i = 0 ; i < data.Days.length; i++) {
           dailyForecast.push(setDailyForecast(data.Days[i]))
       }
       //DailyService.setDaily($scope.forecast[0]);
-      return {
+      forecast =  {
+        location : {
+          lat: lat,
+          long : long,
+          placeName : '',
+          country : ''
+        },
       	DailyForecast : dailyForecast,
       	currentDailyForecast : dailyForecast[0]
       }
+      $rootScope.$broadcast('UPDATED_FORECAST', '');
+    }
+
+    var getForecast = function(){
+      if(forecast != null){
+        return forecast;
+      }
+      return {};
     }
 
     var setDailyForecast = function (data) {
@@ -90,17 +104,17 @@
 		var setIconClass = function(code){
       switch(code){
           case 0:
-           //sunny skies/clear skies
-             break;
+            return 'wi-day-sunny'; 
+            break;
           case 1:
-             //partly cloudy
-             break;
+            return 'wi-day-cloudy-high';
+            break;
           case 2:
-             //cloudy
-             break;
+            return 'wi-day-cloudy';
+            break;
           case 3:
-             //overcast
-             break;
+            return 'wi-day-cloudy';
+            break;
           case 10:
              //misty
              break;
@@ -135,7 +149,8 @@
     }
 
 		return {
-			getForecast : getForecast
+			requestForecast : requestForecast,
+      getForecast : getForecast
 		}
 
 	})
