@@ -47,6 +47,7 @@
 				<i class="material-icons md-36 chevron_icon chevron_icon_right" ng-click="nextForecast()">chevron_right</i>		
 
 			</div>
+
 			<div class="extra_info">
 				<ul>
 					<li ng-repeat="timeframe in forecast.currentDailyForecast.timeframes">
@@ -80,12 +81,13 @@
 			<div id="map_canvas" ng-controller="LocationController">
 
 			    <script id="searchbox.tpl.html" type="text/ng-template">
-			      <input id= "map_textbox" type="text" placeholder="Change location" onfocus="if(this.value != '') { this.value = ''; }">
+			      <input id= "map_textbox" type="text" placeholder="Change location">
 			    </script>
 
 			    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
 			        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
 			    </ui-gmap-google-map>
+			    
 			</div>
 
 		</div>

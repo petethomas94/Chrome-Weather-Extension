@@ -30,7 +30,7 @@
 		}
 
 		$rootScope.$on('LOCATION_CHANGED', function(response){
-			var location = LocationService.getLocation();
+			location = LocationService.getLocation();
 			$scope.map.center.latitude = location.lat;
 			$scope.map.center.longitude = location.long;
 		})
