@@ -17,7 +17,7 @@ The extension has been built predominantly as an excercise in understanding Angu
 
 - No 'Settings'
 	- Provide option to change temperature to F instead of C
-	- Change colour scheme of the extension (?)
+	- Change colour scheme of the extension (?) - Now featured!
 
 ##Usage
 To use the extension you will need Google Chrome internet browser.

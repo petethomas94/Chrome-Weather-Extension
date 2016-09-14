@@ -4,7 +4,6 @@
 
 		$scope.refresh = function(){
 			$rootScope.$broadcast('REFRESH_FORECAST', '');
-			console.log('refresh_forecast');
 		}
 
 	}

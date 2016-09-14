@@ -22,108 +22,122 @@
 	
 	<div ng-controller="DisplayController">
 		<div class="extension_content" ng-class="color.background_primary">
-			<div ng-controller="MainController">
-				<div class="main_info" ng-class=$parent.color.background_secondary>
+			<div class="refresh_layer" ng-class="color.refresh_animation_color">
+				<div ng-controller="MainController">
+					<div class="main_info" ng-class=$parent.color.background_secondary>
 
-					<div class="main_forecast_box active">
-						
-						<ol class="main_forecast_content">
-							<li ng-repeat="daily in forecast.DailyForecast" ng-class="{current:$first}">
-								<div class="forecast_date" ng-class="$parent.color.ui_element_background_primary">
-									<h1 ng-class="$parent.color.ui_element_text_color_primary">
-										{{daily.date}}
-									</h1>
+						<div class="main_forecast_box active">
+							
+							<ol class="main_forecast_content">
+								<li ng-repeat="daily in forecast.DailyForecast" ng-class="{current:$first}">
+									<div class="forecast_date" ng-class="$parent.color.ui_element_background_primary">
+										<h1 ng-class="$parent.color.ui_element_text_color_primary">
+											{{daily.date}}
+										</h1>
+									</div>
+									<div class="max_temp_main">
+										<h1 ng-class="$parent.color.ui_element_text_color_secondary">
+											{{daily.max_temp_main}} &deg;C
+										</h1>
+									</div>
+									<div class="formatted_address">
+										<h1 ng-class="$parent.color.ui_element_text_color_secondary">
+											{{location.formatted_address}}
+									    </h1>
+									</div>
+								</li>
+							</ol>
+
+						</div>
+
+						<i ng-class="[$parent.color.ui_element_background_primary, $parent.color.ui_element_text_color_primary, $parent.color.ui_element_hover]"
+						   class="material-icons md-36 chevron_icon chevron_icon_left" 
+						   ng-click="prevForecast()">
+							chevron_left
+						</i>
+						<i ng-class="[$parent.color.ui_element_background_primary, $parent.color.ui_element_text_color_primary, $parent.color.ui_element_hover]"
+						   class="material-icons md-36 chevron_icon chevron_icon_right" 
+						   ng-click="nextForecast()">
+						   chevron_right
+					    </i>		
+
+					</div>
+
+					<div class="extra_info" ng-class="$parent.color.ui_element_background_primary">
+						<ul ng-class="$parent.color.background_primary">
+							<li ng-class="$parent.color.ui_element_background_primary" ng-repeat="timeframe in forecast.currentDailyForecast.timeframes">
+								<div class="timeframe_time timeframe_element">
+									<h1 ng-class="$parent.color.ui_element_text_color_primary">{{timeframe.time}}</h1>
 								</div>
-								<div class="max_temp_main">
-									<h1 ng-class="$parent.color.ui_element_text_color_secondary">
-										{{daily.max_temp_main}} &deg;C
-									</h1>
+								<div class="timeframe_temp timeframe_element">
+									<h1 ng-class="color.ui_element_text_color_primary">{{timeframe.temp}} &deg;C</h1>
 								</div>
-								<div class="formatted_address">
-									<h1 ng-class="$parent.color.ui_element_text_color_secondary">
-										{{location.formatted_address}}
-								    </h1>
+								<div class="timeframe_element timeframe_icon">
+									<i class="wi" ng-class="[timeframe.icon_class, $parent.color.ui_element_text_color_primary]"></i>
 								</div>
 							</li>
-						</ol>
-
+						</ul>
 					</div>
 
-					<i ng-class="[$parent.color.ui_element_background_primary, $parent.color.ui_element_text_color_primary, $parent.color.ui_element_hover]"
-					   class="material-icons md-36 chevron_icon chevron_icon_left" 
-					   ng-click="prevForecast()">
-						chevron_left
-					</i>
-					<i ng-class="[$parent.color.ui_element_background_primary, $parent.color.ui_element_text_color_primary, $parent.color.ui_element_hover]"
-					   class="material-icons md-36 chevron_icon chevron_icon_right" 
-					   ng-click="nextForecast()">
-					   chevron_right
-				    </i>		
-
 				</div>
 
-				<div class="extra_info" ng-class="$parent.color.ui_element_background_primary">
-					<ul ng-class="$parent.color.background_secondary">
-						<li ng-class="$parent.color.ui_element_background_primary" ng-repeat="timeframe in forecast.currentDailyForecast.timeframes">
-							<div class="timeframe_time timeframe_element">
-								<h1 ng-class="$parent.color.ui_element_text_color_primary">{{timeframe.time}}</h1>
-							</div>
-							<div class="timeframe_temp timeframe_element">
-								<h1 ng-class="color.ui_element_text_color_primary">{{timeframe.temp}} &deg;C</h1>
-							</div>
-							<div class="timeframe_element timeframe_icon">
-								<i class="wi" ng-class="[timeframe.icon_class, $parent.color.ui_element_text_color_primary]"></i>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-			</div>
-
-			<div class="settings_section" ng-class="color.background_secondary">
-				<div class="heading_bar" ng-class="color.ui_element_background_primary">
-					<h1 ng-class="color.ui_element_text_color_primary">Settings</h1>
-					<div ng-class="color.back_button_background" class="heading_bar_return">
-						<i ng-class="color.back_button_text_color" class="material-icons md-36">arrow_back</i>
+				<div class="settings_section" ng-class="color.background_secondary">
+					<div class="heading_bar" ng-class="color.ui_element_background_primary">
+						<h1 ng-class="color.ui_element_text_color_primary">Settings</h1>
+						<div ng-class="[color.back_button_background, color.back_button_hover]" class="heading_bar_return">
+							<i ng-class="color.back_button_text_color" class="material-icons md-36">arrow_back</i>
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="location_section visible_section">
+					<div class="color_selector">
+						<div>
+							<h1 ng-class="color.ui_element_text_color_primary">Select Color:</h1>
+						</div>
+						<div>
+							<button class="color_button blue" ng-click="changeColorScheme(1)"></button>
+						</div>
+						<div>
+							<button class="color_button yellow" ng-click="changeColorScheme(0)"></button>
+						</div>
+					</div>
 
-				<div class="heading_bar_return" ng-class="[color.map_element_background, color.map_back_button_hover]">
-					<i class="material-icons md-36" ng-class="color.back_button_text_color">arrow_back</i>
-				</div>
-
-				<div id="map_canvas" ng-controller="LocationController">
-
-				    <script id="searchbox.tpl.html" type="text/ng-template">
-				      <input id= "map_textbox" type="text" placeholder="Change location" ng-class="[$parent.color.map_element_background, $parent.color.back_button_text_color]">
-				    </script>
-
-				    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
-				        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
-				    </ui-gmap-google-map>
-				    
 				</div>
 
-			</div>
+				<div class="location_section visible_section">
+
+					<div class="heading_bar_return" ng-class="[color.map_element_background, color.map_back_button_hover]">
+						<i class="material-icons md-36" ng-class="color.back_button_text_color">arrow_back</i>
+					</div>
+
+					<div id="map_canvas" ng-controller="LocationController">
+
+					    <script id="searchbox.tpl.html" type="text/ng-template">
+					      <input id= "map_textbox" type="text" placeholder="Change location" ng-class="[$parent.color.map_element_background, $parent.color.back_button_text_color]">
+					    </script>
+
+					    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+					        <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+					    </ui-gmap-google-map>
+					    
+					</div>
+
+				</div>
 
 
-			<div class="options" ng-class="color.ui_element_background_primary">
-				<div class="options_item change_location_button" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
-					<i class="material-icons md-36" ng-class="color.ui_element_text_color_primary">search</i>
-				</div>
-				<div class="options_item settings_button" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
-					<i class="material-icons md-36" ng-class="color.ui_element_text_color_primary">settings</i>
-				</div>
-				<div ng-controller="RefreshController">
-					<div class="options_item refresh_button" ng-click="refresh()" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
-						<i class="material-icons md-36 refreshIcon" ng-class="$parent.color.ui_element_text_color_primary">refresh</i>
+				<div class="options" ng-class="color.ui_element_background_primary">
+					<div class="options_item change_location_button" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
+						<i class="material-icons md-36" ng-class="color.ui_element_text_color_primary">search</i>
+					</div>
+					<div class="options_item settings_button" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
+						<i class="material-icons md-36" ng-class="color.ui_element_text_color_primary">settings</i>
+					</div>
+					<div ng-controller="RefreshController">
+						<div class="options_item refresh_button" ng-click="refresh()" ng-class="[color.ui_element_background_primary, color.ui_element_hover]">
+							<i class="material-icons md-36 refreshIcon" ng-class="$parent.color.ui_element_text_color_primary">refresh</i>
+						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 

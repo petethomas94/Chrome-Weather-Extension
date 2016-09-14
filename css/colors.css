@@ -1,29 +1,104 @@
 /*Yellow color scheme~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*Backgrounds~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.background_primary_1{ /*main background*/
+.background_primary_0{ /*main background*/
     background-color: #ffff33;
 }
-.background_secondary_1{ /*background for 'main' and extra info sections*/
+.background_secondary_0{ /*background for 'main' and extra info sections*/
     background-color: #ffff99;
 }
-.ui_element_background_primary_1{ /*background for heading bars, options menu and left right buttons*/
+.ui_element_background_primary_0{ /*background for heading bars, options menu and left right buttons*/
     background-color: #f2f2f2;
 }
-.map_element_background_1{ /*background for input and button on google map*/
+.map_element_background_0{ /*background for input and button on google map*/
 	background-color: rgba(128, 128, 128, 0.7);
 }
-.back_button_background_1{ /*background for button to navigate back from settings tab*/
+.back_button_background_0{ /*background for button to navigate back from settings tab*/
     background-color: #808080;	
 }
 /*Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.ui_element_text_color_primary_1{ /*heading bars/ icons*/
+.ui_element_text_color_primary_0{ /*heading bars/ icons*/
     color: #808080;	
 }
-.ui_element_text_color_secondary_1{ /*temp / location text*/
+.ui_element_text_color_secondary_0{ /*temp / location text*/
     color: #a6a6a6;
 }
-.back_button_text_color_1{ /*settings back button*/
+.back_button_text_color_0{ /*settings back button*/
     color: #f2f2f2;
+}
+/*Hover~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.ui_element_hover_0:hover{ /*UI element hover color*/
+	background-color: #cccccc;
+	cursor: pointer;
+	-webkit-user-select: none;
+}
+.back_button_hover_0:hover{ /*Hover color for back button*/
+    background-color: #999999;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+.map_back_button_hover_0:hover{
+	background-color: rgba(115, 115, 115, 0.7);
+	cursor: pointer;
+    -webkit-user-select: none;
+}
+/*Scrollbar~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.scrollbar_color_0::-webkit-scrollbar{
+    background-color: #ffff99;
+}
+
+.scrollbar_color_0::-webkit-scrollbar-thumb{
+    height: 10px;
+    background-color: #cccccc;
+}
+
+.scrollbar_color_::-webkit-scrollbar-thumb:hover{
+	background-color: #a6a6a6;
+	cursor: pointer;
+}
+/*Refresh animation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.refresh_animation_color_0{	
+	background-image: -webkit-linear-gradient(left,rgba(255, 255, 0, 0.7) , rgba(128, 223, 255, 0.7), rgba(255, 255, 255, 0.7)); /* For Safari 5.1 to 6.0 */
+    background-image: -o-linear-gradient(right, rgba(255, 255, 0, 0.7) , rgba(128, 223, 255, 0.7), rgba(255, 255, 255, 0.7)); /* For Opera 11.1 to 12.0 */
+    background-image: -moz-linear-gradient(right, rgba(255, 255, 0, 0.7) , rgba(128, 223, 255, 0.7), rgba(255, 255, 255, 0.7)); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to right, rgba(255, 255, 0, 0.7) , rgba(128, 223, 255, 0.7), rgba(255, 255, 255, 0.7)); /* Standard syntax */
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Blue color scheme~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Backgrounds~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.background_primary_1{ /*main background*/
+    background-color: #0099ff;
+}
+.background_secondary_1{ /*background for 'main' and extra info sections*/
+    background-color: #99d6ff;
+}
+.ui_element_background_primary_1{ /*background for heading bars, options menu and left right buttons*/
+    background-color: #a6a6a6;
+}
+.map_element_background_1{ /*background for input and button on google map*/
+	background-color: rgba(77, 77, 77, 0.7);
+}
+.back_button_background_1{ /*background for button to navigate back from settings tab*/
+    background-color: #4d4d4d;	
+}
+/*Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.ui_element_text_color_primary_1{ /*heading bars/ icons*/
+    color: #4d4d4d;	
+}
+.ui_element_text_color_secondary_1{ /*temp / location text*/
+    color: #737373;
+}
+.back_button_text_color_1{ /*settings back button*/
+    color: #bfbfbf;
 }
 /*Hover~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .ui_element_hover_1:hover{ /*UI element hover color*/
@@ -32,7 +107,7 @@
 	-webkit-user-select: none;
 }
 .back_button_hover_1:hover{ /*Hover color for back button*/
-    background-color: #999999;
+    background-color: #737373;
     cursor: pointer;
     -webkit-user-select: none;
 }
@@ -42,49 +117,23 @@
     -webkit-user-select: none;
 }
 /*Scrollbar~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
-/*Blue color scheme~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*Backgrounds~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.background_primary_2{ /*main background*/
-    background-color: #0099ff;
-}
-.background_secondary_2{ /*background for 'main' and extra info sections*/
+.scrollbar_color_1::-webkit-scrollbar{
     background-color: #99d6ff;
 }
-.ui_element_background_primary_2{ /*background for heading bars, options menu and left right buttons*/
-    background-color: #a6a6a6;
+
+.scrollbar_color_1::-webkit-scrollbar-thumb{
+    height: 10px;
+    background-color: #cccccc;
 }
-.map_element_background_2{ /*background for input and button on google map*/
-	background-color: rgba(77, 77, 77, 0.7);
-}
-.back_button_background_2{ /*background for button to navigate back from settings tab*/
-    background-color: #4d4d4d;	
-}
-/*Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.ui_element_text_color_primary_2{ /*heading bars/ icons*/
-    color: #4d4d4d;	
-}
-.ui_element_text_color_secondary_2{ /*temp / location text*/
-    color: #737373;
-}
-.back_button_text_color_2{ /*settings back button*/
-    color: #bfbfbf;
-}
-/*Hover~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.ui_element_hover_2:hover{ /*UI element hover color*/
-	background-color: #cccccc;
+
+.scrollbar_color_1::-webkit-scrollbar-thumb:hover{
+	background-color: #737373;
 	cursor: pointer;
-	-webkit-user-select: none;
 }
-.back_button_hover_2:hover{ /*Hover color for back button*/
-    background-color: #999999;
-    cursor: pointer;
-    -webkit-user-select: none;
+/*Refresh animation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.refresh_animation_color_1{	
+	background-image: -webkit-linear-gradient(left, rgba(0, 153, 255, 0.7) , rgba(255, 255, 153, 0.7), rgba(0, 153, 255, 0.7)); /* For Safari 5.1 to 6.0 */
+    background-image: -o-linear-gradient(right, rgba(0, 153, 255, 0.7) , rgba(255, 255, 153, 0.7), rgba(0, 153, 255, 0.7)); /* For Opera 11.1 to 12.0 */
+    background-image: -moz-linear-gradient(right, rgba(0, 153, 255, 0.7) , rgba(255, 255, 153, 0.7), rgba(0, 153, 255, 0.7)); /* For Firefox 3.6 to 15 */
+    background-image: linear-gradient(to right, rgba(0, 153, 255, 0.7) , rgba(255, 255, 153, 0.7), rgba(0, 153, 255, 0.7)); /* Standard syntax */
 }
-.map_back_button_hover_2:hover{
-	background-color: rgba(115, 115, 115, 0.7);
-	cursor: pointer;
-    -webkit-user-select: none;
-}
-/*Scrollbar~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

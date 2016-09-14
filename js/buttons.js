@@ -19,10 +19,10 @@
 	});
 
 	$('.refresh_button').on('click', function(){
-		$('.extra_info ul').addClass('refresh_effect');
+		$('.refresh_layer').addClass('refresh_effect');
 	});
 
-	$('.extra_info ul').on(
+	$('.refresh_layer').on(
 		"webkitAnimationEnd oanimationend msAnimationEnd animationend",
 		function(){
 			$(this).removeClass('refresh_effect');
