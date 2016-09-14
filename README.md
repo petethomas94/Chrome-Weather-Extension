@@ -1,6 +1,8 @@
-###Chrome Weather Extension 
+#Chrome Weather Extension 
 
 This is a basic chrome extension built using AngularJS, jQuery and angular-google-maps.
+
+Information is retrieved using the 'weatherunlocked' API and uses Google Maps Api for displaying locations.
 
 The extension displays weather information to the user allowing them to change their location and receive relevant information.
 
@@ -9,7 +11,7 @@ The extension has been built predominantly as an excercise in understanding Angu
 ##Current missing features and issues/bugs:
 
 - Map is the first thing the user sees in the sections panel.
-	-Should be the extra info section but due to the google maps api not rendering this is not the case.
+	- Should be the extra info section but due to the google maps api not rendering this is not the case.
 
 - Weather icons missing in the weather section
 
