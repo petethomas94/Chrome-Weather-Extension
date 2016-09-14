@@ -2,7 +2,7 @@
 
 	var LocationController = function($scope, $rootScope, $log, LocationService, GoogleMapApi){
 
-		var location = LocationService.getLocation()
+		var location = LocationService.getLocation();
 
 		angular.extend($scope, {
 	        map: {center: 

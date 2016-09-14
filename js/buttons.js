@@ -1,9 +1,5 @@
 (function(){
 
-	//$('.location_section').removeClass('visible_section')//.removeClass('visible_section');
-
-	//$('.extra_info').addClass('visible_section');
-
 	$('.settings_button').on('click', function(){
 		var $visible_section = $('.visible_section');
 		$visible_section.removeClass('visible_section');
@@ -20,20 +16,17 @@
 		var $visible_section = $('.visible_section');
 		$visible_section.removeClass('visible_section');
 		$('.extra_info').addClass('visible_section');
-	})
+	});
 
 	$('.refresh_button').on('click', function(){
-		toggleRefreshEffect();
-	})
+		$('.extra_info ul').addClass('refresh_effect');
+	});
 
-	var toggleRefreshEffect = function(){
-
-		$element = $('.extra_info ul');
-
-		$element.removeClass('refresh_effect');
-
-		$element.addClass('refresh_effect');
-
-	}
+	$('.extra_info ul').on(
+		"webkitAnimationEnd oanimationend msAnimationEnd animationend",
+		function(){
+			$(this).removeClass('refresh_effect');
+		}
+	);
 
 })();

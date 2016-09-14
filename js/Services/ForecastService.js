@@ -110,41 +110,45 @@
             return 'wi-day-cloudy-high';
             break;
           case 2:
-            return 'wi-day-cloudy';
+            return 'wi-cloudy';
             break;
           case 3:
-            return 'wi-day-cloudy';
+            return 'wi-cloudy';
             break;
           case 10:
-             //misty
-             break;
+            return 'wi-sleet';
+            break;
           case 39:
-             //blizard
-             break;
+            return 'wi-snow';
           case 45:
-             //fog
-             break;
+            return 'wi-fog';
+            break;
           case 49:
-             //fog
-             break;
+            return 'wi-fog';
+            break;
           case 50:
-             //drizzle
-             break;
+            return 'wi-rain';
+            break;
           case 51:
-             //drizzle
-             break;
+            return 'wi-rain';
+            //drizzle
+            break;
           case 60:
-             //light rain
-             break;
+            return 'wi-rain';
+            //light rain
+            break;
           case 61:
-             //light rain
-             break;
+            return 'wi-rain';
+            //light rain
+            break;
           case 64:
-             //heavy rain
-             break;
+            return 'wi-rain-mix';
+            //heavy rain
+            break;
           case 65:
-             //heavy rain
-             break;
+            return 'wi-rain-mix';
+            //heavy rain
+            break;
       }
     }
 

@@ -1,4 +1,4 @@
-"# Chrome-Weather-Extension" 
+###Chrome Weather Extension 
 
 This is a basic chrome extension built using AngularJS, jQuery and angular-google-maps.
 
